@@ -1,3 +1,6 @@
 from django.contrib import admin
+from webapp.models import Ads, Comment, Category
 
-# Register your models here.
+admin.site.register(Ads)
+admin.site.register(Comment)
+admin.site.register(Category)
