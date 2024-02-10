@@ -1,10 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block navbar %}
+    <a class="nav-link" aria-current="page" href="{% url 'webapp:index' %}">На главную</a>
+    <span style="margin-right: 10px; margin-left: 10px">|</span>
+    <a class="nav-link" aria-current="page" href="{% url 'webapp:comment_create' ads.pk %}">Коментировать</a>
+{% endblock %}
+
+{% block content %}
+    <h1>Обьявление:</h1>
+    <div class="card" style="max-width: 700px; margin-bottom: 50px">
+    <img src="{{ ads.image.url }}" class="card-img-top" alt="..." style="max-width: 700px">
+        <div class="card-body">
+            <h5 class="card-title">Заголовок: {{ ads.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Автор: {{ ads.author }}</h6>
+            <p class="card-text">Описаие: {{ ads.description }}</p>
+            <p class="card-text">Category: {{ ads.category }}</p>
+            <p class="card-text">Status: {{ ads.status }}</p>
+            <p class="card-text">Price: {{ ads.price }}</p>
+        </div>
+    </div>
+    
+    {% for comment in comments %}
+            <div class="col">
+                <div class="card" style="max-width: 700px; margin-bottom: 40px">
+                    <div class="card-body">
+                        <h5 class="card-title">Автор: {{ comment.author }}</h5>
+                        <p class="card-text">{{ comment.text }}</p>
+                        <p>{{ comment.created_at }}</p>
+                        {% if perms.webapp.delete_comment or comment.author == request.user %}
+                            <form method="post" action="{% url 'webapp:comment_delete' pk=comment.pk %}">
+                            {% csrf_token %}
+                            <button class="btn btn-danger" type="submit">Удалить</button>
+                        </form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
