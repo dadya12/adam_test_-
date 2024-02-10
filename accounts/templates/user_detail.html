@@ -31,8 +31,29 @@
                        role="button">Смена пароля</a>
                 {% endif %}
             </div>
-            <p>{{ user_obj.get_full_name }}</p>
-            <p>{{ user_obj.user_information }}</p>
+            <p>Имя и Фамили: {{ user_obj.get_full_name }}</p>
+            <p>Инфа: {{ user_obj.user_information }}</p>
         </div>
+    </div>
+    <h3 class="mb-3">Все объявления:</h3>
+    <div class="row">
+        {% for asd in ads %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <a style="text-decoration: none" href="">
+                    <div class="card" style="width: 300px; height: 480px">
+                        <img style="width: 299px; height: 320px" src="{{ asd.imagine.url }}" class="card-img-top"
+                             alt="Photo">
+                        <div class="card-body">
+                            <span class="card-text"><b><a class="text-dark" style="text-decoration: none"
+                                                       href="">{{ asd.author }}</a></b>
+                            </span><br>
+                            <span>{{ ad.author.phone_number }}</span>
+                            <p class="card-text"><b>Заголовок:</b> {{ asd.title }}</p>
+                            <p class="card-text"><b>Цена:</b> {{ asd.price }} сом</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

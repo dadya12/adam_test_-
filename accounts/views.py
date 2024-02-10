@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.db.models import Q
 from django.shortcuts import redirect, reverse
@@ -6,6 +7,7 @@ from django.views.generic import CreateView, DetailView, UpdateView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from accounts.forms import MyUserCreationForm, UserChangeForm, SearchForm
 from django.contrib.auth.views import PasswordChangeView
+from webapp.models import Ads
 
 
 class RegisterView(CreateView):

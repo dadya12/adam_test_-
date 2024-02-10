@@ -17,11 +17,11 @@
                         <p class="card-text">Category: {{ asd.category }}</p>
                         <p class="card-text">Status: {{ asd.status }}</p>
                         <a href="{% url 'webapp:detail_ads' asd.pk %}" class="btn btn-success card-link">Подробнее...</a>
-                        {% if perms.webapp.change_article or article.author == request.user %}
+                        {% if perms.webapp.change_ads or ads.author == request.user %}
                             <a href="{% url 'webapp:update_ads' asd.pk %}" class="btn btn-success card-link">Редактировать</a>
                         {% endif %}
 
-                        {% if perms.webapp.delete_article or article.author == request.user %}
+                        {% if perms.webapp.delete_article or ads.author == request.user %}
                             <form action="{% url 'webapp:delete_ads' asd.pk %}" method="post">
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-success" style="margin-top: 20px">Удалить</button>
