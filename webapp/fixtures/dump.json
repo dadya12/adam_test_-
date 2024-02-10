@@ -1,0 +1,129 @@
+[
+{
+  "model": "webapp.category",
+  "pk": 1,
+  "fields": {
+    "name": " вартиры"
+  }
+},
+{
+  "model": "webapp.ads",
+  "pk": 1,
+  "fields": {
+    "image": "",
+    "title": " в трешка",
+    "description": "лучша€ квартира",
+    "author": 1,
+    "category": 1,
+    "price": "3500000.00",
+    "status": "moderated",
+    "created_at": "2024-02-10T08:48:59.287Z",
+    "published_at": null,
+    "updated_at": "2024-02-10T08:58:36.693Z"
+  }
+},
+{
+  "model": "webapp.ads",
+  "pk": 2,
+  "fields": {
+    "image": "ads/picture/scale_1200.jpeg",
+    "title": "ascasc",
+    "description": "dsacasc",
+    "author": 1,
+    "category": 1,
+    "price": "1300.00",
+    "status": "published",
+    "created_at": "2024-02-10T08:49:20.063Z",
+    "published_at": null,
+    "updated_at": "2024-02-10T09:06:57.955Z"
+  }
+},
+{
+  "model": "webapp.ads",
+  "pk": 3,
+  "fields": {
+    "image": "ads/picture/scale_1200_PJcVOAs.jpeg",
+    "title": "wwww",
+    "description": "asdasdasdasdasdasd22",
+    "author": 1,
+    "category": 1,
+    "price": "122.00",
+    "status": "published",
+    "created_at": "2024-02-10T08:56:51.245Z",
+    "published_at": null,
+    "updated_at": "2024-02-10T10:47:17.239Z"
+  }
+},
+{
+  "model": "webapp.ads",
+  "pk": 4,
+  "fields": {
+    "image": "ads/picture/1692246218_kartinki-pibig-info-p-molochnii-shokolad-kartinki-krasivo-62.jpg",
+    "title": "sadas",
+    "description": "asdasdasdasds",
+    "author": 1,
+    "category": 1,
+    "price": "12324.00",
+    "status": "on_delete",
+    "created_at": "2024-02-10T09:09:34.414Z",
+    "published_at": null,
+    "updated_at": "2024-02-10T10:42:29.873Z"
+  }
+},
+{
+  "model": "webapp.ads",
+  "pk": 5,
+  "fields": {
+    "image": "ads/picture/1692246218_kartinki-pibig-info-p-molochnii-shokolad-kartinki-krasivo-62_Y6hQ7CR.jpg",
+    "title": "asd",
+    "description": "asdasdas",
+    "author": 2,
+    "category": 1,
+    "price": "2134.00",
+    "status": "published",
+    "created_at": "2024-02-10T11:19:09.644Z",
+    "published_at": null,
+    "updated_at": "2024-02-10T11:19:09.644Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 1,
+  "fields": {
+    "text": "да да люта€ кв особенно фотка шоколада внушает довериве",
+    "author": 1,
+    "ads": 3,
+    "created_at": "2024-02-10T09:51:43.742Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 2,
+  "fields": {
+    "text": "adadadad",
+    "author": 1,
+    "ads": 2,
+    "created_at": "2024-02-10T10:28:45.579Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 4,
+  "fields": {
+    "text": "wwwqewe",
+    "author": 1,
+    "ads": 3,
+    "created_at": "2024-02-10T11:05:34.816Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 5,
+  "fields": {
+    "text": "qwer",
+    "author": 2,
+    "ads": 5,
+    "created_at": "2024-02-10T11:19:29.704Z"
+  }
+}
+]
